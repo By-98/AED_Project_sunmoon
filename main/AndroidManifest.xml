@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.findaed">
+    package="com.example.naver_gps">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />//사용자의 실시간 위치를 위함
+
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FindAED">
-        <activity android:name=".menu9"></activity>
-        <activity android:name=".menu8" />
-        <activity android:name=".menu7" />
-        <activity android:name=".menu6" />
-        <activity android:name=".menu5" />
-        <activity android:name=".menu4" />
-        <activity android:name=".menu3" />
-        <activity android:name=".menu2" />
-        <activity android:name=".menu1" />
-        <activity android:name=".cprguide" />
-        <activity android:name=".chestcompressionsguide" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".AEDActivity" />
+        android:theme="@style/Theme.NAVER_GPS">
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="r1axgcepah" />//클라이언트 아이디
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

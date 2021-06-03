@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/mainimg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:padding="0sp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/maintext1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/aed_btn"
-        tools:ignore="ContentDescription" />
-
-    <ImageButton
-        android:id="@+id/aed_btn"
+    <fragment
+        android:id="@+id/map_fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/mainimg"
-        app:layout_constraintBottom_toTopOf="@+id/menu_btn"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/mainbtn1"
-        tools:ignore="ContentDescription"
-        android:padding="0sp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        />
-
-    <ImageButton
-        android:id="@+id/menu_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/aed_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/mainbtn2"
-        tools:ignore="ContentDescription"
-        android:padding="0sp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        />
-
-
+        android:layout_height="match_parent"
+        android:name="com.naver.maps.map.MapFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
