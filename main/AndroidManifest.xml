@@ -18,13 +18,28 @@
             android:value="r1axgcepah" />//클라이언트 아이디
 
 
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".menu9"></activity>
+        <activity android:name=".menu8" />
+        <activity android:name=".menu7" />
+        <activity android:name=".menu6" />
+        <activity android:name=".menu5" />
+        <activity android:name=".menu4" />
+        <activity android:name=".menu3" />
+        <activity android:name=".menu2" />
+        <activity android:name=".menu1" />
+        <activity android:name=".cprguide" />
+        <activity android:name=".chestcompressionsguide" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".MainActivity" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+
     </application>
 
 </manifest>
