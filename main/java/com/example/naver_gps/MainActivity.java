@@ -30,7 +30,7 @@ public class MainActivity<context> extends AppCompatActivity implements OnMapRea
     Button aedfind_btn;
     Button chestcompressionsguide_btn;
     Button cprguide_btn;
-
+    InfoWindow infoWindow = new InfoWindow();// 마커에 정보를 표시하기 위함
 
 
 
@@ -108,26 +108,31 @@ public class MainActivity<context> extends AppCompatActivity implements OnMapRea
 
         // 지도상에 마커 표시
         for(int i =0; i<aedList.list.size();i++){
-            InfoWindow infoWindow = new InfoWindow();// 마커에 정보를 표시하기 위함
+
             Marker marker = new Marker();
             marker.setPosition(new LatLng(aedList.list.get(i).latitude, aedList.list.get(i).hardness));//위도 경도
+            marker.setTag(aedList.list.get(i).place+"\n"+aedList.list.get(i).location);
             marker.setMap(naverMap);
+
             marker.setWidth(50);//아이콘 너비    50
             marker.setHeight(80);//아이콘 높이   80
             marker.setIcon(OverlayImage.fromResource(R.drawable.aed_maker));//마크 표시 모양을 변경
-            infoWindow.open(marker);// 마커에 대한 정보 표시
+            //infoWindow.open(marker);// 마커에 대한 정보 표시
 
-            int count = i;
-            infoWindow.setAdapter(new InfoWindow.DefaultTextAdapter(this) {
-                @NonNull
-                @Override
-                public CharSequence getText(@NonNull InfoWindow infoWindow) {
-                    return aedList.list.get(count).place+"\n"+aedList.list.get(count).location;
-                }
+            marker.setOnClickListener(overlay -> {
+                infoWindow.open(marker);
+                return true;
             });
 
-
         }
+
+        infoWindow.setAdapter(new InfoWindow.DefaultTextAdapter(this) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return (CharSequence)infoWindow.getMarker().getTag();
+            }
+        });
 
 
         // NaverMap 객체 받아서 NaverMap 객체에 위치 소스 지정
